@@ -1,5 +1,0 @@
-current directory: /Users/shigeru/gyakuten_lessons/bulk_import/vendor/bundle/ruby/2.5.0/gems/childprocess-1.0.1/ext
-/Users/shigeru/.rbenv/versions/2.5.1/bin/ruby mkrf_conf.rb
-
-current directory: /Users/shigeru/gyakuten_lessons/bulk_import/vendor/bundle/ruby/2.5.0/gems/childprocess-1.0.1/ext
-/Users/shigeru/.rbenv/versions/2.5.1/bin/ruby -rrubygems /Users/shigeru/gyakuten_lessons/bulk_import/vendor/bundle/ruby/2.5.0/gems/rake-12.3.2/exe/rake RUBYARCHDIR=/Users/shigeru/gyakuten_lessons/bulk_import/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0-static/childprocess-1.0.1 RUBYLIBDIR=/Users/shigeru/gyakuten_lessons/bulk_import/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0-static/childprocess-1.0.1

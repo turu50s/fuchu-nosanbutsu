@@ -29,3 +29,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Add files
+.DS_Store
+database.yml
+vendor/bundle
