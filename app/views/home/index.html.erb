@@ -1,7 +1,4 @@
-<h2>
-  府中産農産物直売所一覧
-</h2>
-<div>
+<div class="mb-4">
   <%= search_form_for(@search, url: root_path) do |f| %>
     <%= f.search_field :description_cont, placeholder: "詳細" %>
     <%= f.search_field :address_cont, placeholder: "住所" %>
@@ -13,7 +10,7 @@
   <%# end %>
 </div>
 <% @stores.each do |store| %>
-  <div>
+  <div class="mb-3">
     <h3><%= store.name %></h3>
     <p><%= store.address %></p>
     <div><%= highlight(store.description, @q) %></div>
