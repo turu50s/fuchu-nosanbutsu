@@ -32,5 +32,4 @@
 
 # Add files
 .DS_Store
-database.yml
 vendor/bundle

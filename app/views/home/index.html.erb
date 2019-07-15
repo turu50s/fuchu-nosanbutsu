@@ -15,7 +15,7 @@
   <div>
     <h3><%= store.name %></h3>
     <p><%= store.address %></p>
-    <div><%= store.description %></div>
+    <div><%= highlight(store.description, @q) %></div>
   </div>
 <% end %>
 <div>
