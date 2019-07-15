@@ -1,21 +1,28 @@
-<div class="mb-4">
-  <%= search_form_for(@search, url: root_path) do |f| %>
-    <%= f.search_field :description_cont, placeholder: "詳細" %>
-    <%= f.search_field :address_cont, placeholder: "住所" %>
-    <%= f.submit '検索' %>
-  <% end %>
-  <%# form_with url: root_path, method: :get, local: true do |f| %>
-    <%# f.text_field :keyword, value: params[:keyword], autocomplete: 'off' %>
-    <%# f.submit '検索' %>
-  <%# end %>
+<div class="mb-4 d-flex">
+  <div class="mr-5">
+    <%= search_form_for(@search, url: root_path) do |f| %>
+      <%= f.search_field :description_cont, placeholder: "詳細" %>
+      <%= f.search_field :address_cont, placeholder: "住所" %>
+      <%= f.submit '検索' %>
+    <% end %>
+    <%# form_with url: root_path, method: :get, local: true do |f| %>
+      <%# f.text_field :keyword, value: params[:keyword], autocomplete: 'off' %>
+      <%# f.submit '検索' %>
 </div>
+  <%# end %>
+  <%= link_to '新規登録', new_home_path, class: 'btn btn-primary' %>
+</div>
+
 <% @stores.each do |store| %>
   <div class="mb-3">
     <h3><%= store.name %></h3>
     <p><%= store.address %></p>
     <div><%= highlight(store.description, @q) %></div>
   </div>
+  <%= link_to '編集', edit_home_path(store), class: 'btn btn-primary mb-3' %>
+  <%= link_to '削除', home_path(store), method: :delete, data: {confirm: "「#{store.name}」のデータを削除しますか？"}, class: 'btn btn-primary mb-3' %>
 <% end %>
+<hr>
 <div>
   <%= paginate @stores %>
 </div>

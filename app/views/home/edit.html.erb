@@ -1,0 +1,18 @@
+<%= link_to '一覧', home_index_path, class: 'nav-link mb-4' %>
+
+<%= form_with model: @store, url: home_path, method: :put, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 5, class: 'form-control' %>
+  </div>
+  <%= f.submit nil, class: 'btn btn-primary'%>
+<% end %>
+
