@@ -13,7 +13,8 @@ class Store < ApplicationRecord
 
   def self.store_params(row)
     {
-      name: row['名前'],
+      name: row['名 前'],
+      address: row['直売所住所'],
       description: row['販売品目']
     }
   end
