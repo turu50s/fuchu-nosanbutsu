@@ -1,6 +1,7 @@
 .c { color: #408080; font-style: italic }  /* Comment */
 .err { border: 1px solid #FF0000 }         /* Error */
 .k { color: #008000; font-weight: bold }   /* Keyword */
+.kk { color: #008000; background-color: yellow }   /* Keyword */
 .o { color: #666666 }                      /* Operator */
 .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .cp { color: #BC7A00 }                     /* Comment.Preproc */
