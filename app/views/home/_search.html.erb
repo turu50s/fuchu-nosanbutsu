@@ -1,0 +1,10 @@
+<% stores.each do |store| %>
+  <div class="mb-3">
+    <h3><%= store.name %></h3>
+    <p><%= store.address %></p>
+    <div><%= highlight(store.description, @q, highlighter: '<strong class="kk">\1</strong>') %></div>
+  </div>
+  <%= link_to '編集', edit_home_path(store), class: 'btn btn-primary mb-3' %>
+  <%= link_to '削除', home_path(store), method: :delete, data: {confirm: "「#{store.name}」のデータを削除しますか？"}, class: 'btn btn-primary mb-3' %>
+<% end %>
+<%= paginate stores %>

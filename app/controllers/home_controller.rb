@@ -2,12 +2,21 @@ class HomeController < ApplicationController
   def index
     if params[:q] == nil
       @q = ''
+      @search = Store.ransack(params[:q])
     else
-      params[:q][:description_cont] = params[:q][:description_cont].split(/[\p{blank}\s]+/)
-      @q = params[:q][:description_cont]
+      if params[:q][:description_cont] != nil
+        description = params[:q][:description_cont].split(/[\p{blank}\s]+/).flatten
+        @q = description
+      end
+      @search = Store.ransack(description_cont_all: description, address_cont: params[:q][:address_cont])
     end
-    @search = Store.ransack(description_cont_all: params[:q][:description_cont])
+    
     @stores = @search.result.page(params[:page]).per(10)
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

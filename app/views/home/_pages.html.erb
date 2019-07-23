@@ -1,0 +1,3 @@
+  <%= render 'search', { stores: @stores, q: @q } %>
+
+  <%= paginate @stores, remote: true %>
