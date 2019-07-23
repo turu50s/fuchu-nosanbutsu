@@ -1,0 +1,32 @@
+<%= link_to '一覧', home_index_path, class: 'nav-link mb-4' %>
+
+<h2><%= @store.address %></h2>
+<div id='map'></div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: { lat: -34.397, lng: 150.644 },
+  zoom: 18
+    });
+
+  let geocoder = new google.maps.Geocoder();
+  let address = '<%= "東京都府中市#{@store.address}" %>'
+  geocoder.geocode({ 'address': address }, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      let marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+    }
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn2BOdGCJ8tK_Id9UMetmqepHFLXqrYl8&callback=initMap" async defer></script>

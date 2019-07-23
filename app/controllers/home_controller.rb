@@ -12,12 +12,17 @@ class HomeController < ApplicationController
     end
     
     @stores = @search.result.page(params[:page]).per(10)
-    # binding.pry
     respond_to do |format|
       format.html
       format.js
     end
   end
+  
+  def show
+    @store = Store.find(params[:id])
+  end
+  
+
 
   def new
     @store = Store.new
