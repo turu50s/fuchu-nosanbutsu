@@ -33,3 +33,4 @@
 # Add files
 .DS_Store
 vendor/bundle
+.env
